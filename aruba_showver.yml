@@ -1,0 +1,17 @@
+---
+- hosts: aoscx_1_6300
+  roles:
+    - role: arubanetworks.aoscx_role
+  vars:
+    ansible_connection: network_cli
+    ansible_python_interpreter: /usr/bin/python3
+  gather_facts: false
+  
+  tasks:
+   - name: Execute show version command
+     aoscx_command:
+      commands: ['show version']
+     register: show_version_output
+   - name: Output registered variable
+     debug:
+       var: show_version_output   

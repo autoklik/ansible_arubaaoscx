@@ -1,0 +1,16 @@
+## Save config to local directory
+---
+- hosts: aoscx_8_MiddleSchoolLvl2A-Aruba
+  collections:
+    - arubanetworks.aoscx
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  gather_facts: False    
+ 
+  tasks:
+  - name: Copy Startup Config to local as JSON
+    aoscx_backup_config:
+     config_name: startup-config
+     output_file: /home/melchoruwc/10.100.200.161
+
+
