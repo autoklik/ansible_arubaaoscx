@@ -11,7 +11,7 @@
       throttle: 10
       aoscx_command:
         commands:
-          - command: 'copy tftp://x.x.x.x/ArubaOS-CX_6400-6300_10_10_1020.swi secondary vrf default'
+          - command: 'copy tftp://x.x.x.x/ArubaOS-CX_x_x_x_x.swi secondary vrf default'
             prompt:
               - '.*\(y\/n\)\?.*'
             answer:
