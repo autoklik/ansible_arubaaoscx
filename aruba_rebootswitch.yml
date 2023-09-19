@@ -1,0 +1,22 @@
+## Reboot Switch
+---
+- hosts: aoscx_switch1
+  roles:
+    - role: arubanetworks.aoscx_role
+  
+#  collections:
+#    - arubanetworks.aos_switch
+
+  vars:
+    ansible_connection: network_cli
+#    ansible_python_interpreter: /usr/bin/python3
+ 
+  tasks:
+    - name: reboot device
+      aoscx_command:
+        commands:
+          - command: 'boot system'
+            prompt:
+              - '.*\(y\/n\)\?.*'
+            answer:
+              -  y

@@ -1,0 +1,17 @@
+---
+- hosts: aoscx_switch1
+  collections:
+    - arubanetworks.aoscx
+  gather_facts: False    
+  tasks:
+   - name: Boot the switch with the new image uploaded to secondary partition.
+     aoscx_boot_firmware:
+       partition_name: 'secondary'
+
+   - name: Wait for the switch to come online after FW upgrade and reboot.
+     wait_for:
+       host: "{{ ansible_host }}"
+       port: 22
+       sleep: 10
+       timeout: 300
+       state: started

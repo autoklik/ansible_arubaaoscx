@@ -1,0 +1,14 @@
+---
+- hosts: aoscx_switch1
+#  roles:
+#    - role: arubanetworks.aoscx_role
+  collections:
+    - arubanetworks.aoscx
+
+  gather_facts: False    
+  tasks:
+    - name: Create VLAN 313 with description and name
+      aoscx_vlan:
+        vlan_id: 313
+        name: Somerset
+        description: Somerset

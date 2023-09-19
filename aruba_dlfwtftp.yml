@@ -1,0 +1,19 @@
+---
+- hosts: aoscx_switch1
+  roles:
+    - arubanetworks.aoscx_role
+  vars:
+    ansible_connection: network_cli
+  gather_facts: false
+
+  tasks:
+    - name: Upload image to secondary partition via TFTP.
+      throttle: 10
+      aoscx_command:
+        commands:
+          - command: 'copy tftp://x.x.x.x/ArubaOS-CX_6400-6300_10_10_1020.swi secondary vrf default'
+            prompt:
+              - '.*\(y\/n\)\?.*'
+            answer:
+              -  y
+

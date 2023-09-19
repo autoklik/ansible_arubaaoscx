@@ -1,0 +1,34 @@
+## Save config and reboot the switch
+---
+- hosts: aoscx_switch1
+  roles:
+    - role: arubanetworks.aoscx_role
+  
+#  collections:
+#    - arubanetworks.aoscx
+  vars:
+    ansible_connection: network_cli
+    ansible_command_timeout: 300
+  gather_facts: False
+
+  tasks:
+    - name: Save running configuration.
+      aoscx_command:
+        commands: ['copy running-config startup-config']
+      register: copy_running_config_startup_config_output
+
+    - name: Show save result
+      debug:
+        var: copy_running_config_startup_config_output
+
+    - name: Reboot switch
+      aoscx_command:
+        commands:
+          - command: 'boot system'
+            prompt:
+              - '.*\(y\/n\)\?.*'
+            answer:
+              -  y
+      ignore_errors: True
+
+

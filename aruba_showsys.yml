@@ -1,0 +1,16 @@
+---
+- hosts: aoscx_switch1
+  roles:
+    - role: arubanetworks.aoscx_role
+  vars:
+    ansible_connection: network_cli
+  gather_facts: False
+
+  tasks:
+    - name: Show System Uptime after Reboot
+      aoscx_command:
+        commands: ['show system']
+      register: show_system_output
+    - name: Show System Result
+      debug:
+        var: show_system_output

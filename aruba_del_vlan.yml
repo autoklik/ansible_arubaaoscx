@@ -1,0 +1,10 @@
+---
+- hosts: aoscx_switch1
+  collections:
+    - arubanetworks.aoscx
+  gather_facts: False    
+  tasks:
+    - name: Delete VLAN 313
+      aoscx_vlan:
+        vlan_id: 313
+        state: delete

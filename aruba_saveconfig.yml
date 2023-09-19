@@ -1,0 +1,24 @@
+# This playbook will save configuration backup into switch memory.
+
+---
+- hosts: aoscx_6300
+  roles:
+    - role: arubanetworks.aoscx_role
+  vars:
+    ansible_connection: network_cli
+#    ansible_python_interpreter: /usr/bin/python3
+  gather_facts: False
+
+#  vars_files:
+#    - /etc/ansible/group_vars/aoscx_switches
+
+  tasks:
+    - name: Save running configuration.
+      aoscx_command:
+        commands: ['copy running-config startup-config']
+      register: copy_running_config_startup_config_output
+
+    - name: Show save result
+      debug:
+        var: copy_running_config_startup_config_output
+
