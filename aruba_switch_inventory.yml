@@ -1,0 +1,41 @@
+## Currently, the module only recognized locally created account.
+## If you are using TACACS to login, it will not work as source of authentication.
+
+all:
+  hosts:
+    aoscx_switch1:
+      ansible_host: 192.168.100.1
+      ansible_user: admin 
+      ansible_password: aruba123
+      ansible_network_os: arubanetworks.aoscx.aoscx
+      ansible_connection: arubanetworks.aoscx.aoscx  # REST API via pyaoscx connection method
+      ansible_aoscx_validate_certs: False
+      ansible_aoscx_use_proxy: False
+      ansible_acx_no_proxy: True  
+    aoscx_switch2:
+      ansible_host: 192.168.100.2
+      ansible_user: admin
+      ansible_password: aruba123
+      ansible_network_os: arubanetworks.aoscx.aoscx
+      ansible_connection: arubanetworks.aoscx.aoscx  # REST API via pyaoscx connection method
+      ansible_aoscx_validate_certs: False
+      ansible_aoscx_use_proxy: False
+      ansible_acx_no_proxy: True
+    aoscx_switch3:
+      ansible_host: 192.168.100.3
+      ansible_user: admin
+      ansible_password: aruba123
+      ansible_network_os: arubanetworks.aoscx.aoscx
+      ansible_connection: arubanetworks.aoscx.aoscx  # REST API via pyaoscx connection method
+      ansible_aoscx_validate_certs: False
+      ansible_aoscx_use_proxy: False
+      ansible_acx_no_proxy: True 
+    aoscx_switch4:
+      ansible_host: 192.168.100.4
+      ansible_user: admin
+      ansible_password: aruba123
+      ansible_network_os: arubanetworks.aoscx.aoscx
+      ansible_connection: arubanetworks.aoscx.aoscx  # REST API via pyaoscx connection method
+      ansible_aoscx_validate_certs: False
+      ansible_aoscx_use_proxy: False
+      ansible_acx_no_proxy: True 
