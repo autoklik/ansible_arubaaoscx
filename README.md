@@ -28,3 +28,12 @@
     * Type ansible-galaxy install arubanetworks.aoscx_role (do not use sudo)
 * Change back to working directory to test out 
     * E.g /etc/ansible
+
+
+############################################################################################################
+
+* On the aruba aoscx switch, you will need to run the following commands before you can automate it.
+
+* switch#config t
+* switch(config)# ssh server vrf default
+* switch(config)# https-server rest access-mode read-write
