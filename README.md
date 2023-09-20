@@ -1,4 +1,4 @@
-* This Ansible for Aruba AOSCX switches modules has been tested on Aruba Switches: 6300, 6400, 8320, 8325
+* The Ansible modules here has been tested on Aruba Switches: 6300, 6400, 8320, 8325
 
 * Please follow the guide below on how to configure the Aruba AOSCX collections on RHEL based OS.
 
