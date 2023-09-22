@@ -1,3 +1,4 @@
+# Aruba AOSCX Playbook to upload a new firmware to a partition using TFTP.
 ---
 - hosts: aoscx_switch1
   roles:
@@ -7,7 +8,7 @@
   gather_facts: false
 
   tasks:
-    - name: Upload image to secondary partition via TFTP.
+    - name: Upload image to primary/secondary partition via TFTP.
       throttle: 10
       aoscx_command:
         commands:
