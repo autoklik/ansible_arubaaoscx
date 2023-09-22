@@ -1,4 +1,5 @@
-## Save config and reboot the switch
+# Aruba AOSCX Playbook to save configuration to memory and reboot the switch.
+# Ignore error is to prevent the playbook from failing after SSH connection were reset during reboot.
 ---
 - hosts: aoscx_switch1
   roles:
