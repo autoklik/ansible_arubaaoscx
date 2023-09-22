@@ -1,3 +1,5 @@
+# Aruba AOSCX Playbook to show the current firmware version of the switch.
+
 ---
 - hosts: aoscx_switch1
   roles:
