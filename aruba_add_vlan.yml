@@ -1,3 +1,5 @@
+# Aruba AOSCX Playbook to create a single vlan.
+
 ---
 - hosts: aoscx_switch1
 #  roles:
