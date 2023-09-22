@@ -1,3 +1,6 @@
+# Aruba AOSCX Playbook to display the serial number of the switch.
+
+
 ---
 - hosts: aoscx_switch1
   roles:
