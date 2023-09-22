@@ -1,3 +1,5 @@
+# Aruba AOSCX Playbook to show the current VLANs configure in the switch.
+
 ---
 - hosts: aoscx_switch1
   roles:
