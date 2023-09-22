@@ -1,3 +1,5 @@
+# Aruba AOSCX Playbook to update the password of the local admin account.
+
 ---
 - hosts: aoscx_switch1
   roles:
