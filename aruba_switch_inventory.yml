@@ -1,4 +1,4 @@
-## Currently, the module only recognized locally created account.
+## NOTE: The module only recognized locally created account.
 ## If you are using TACACS to login, it will not work as source of authentication.
 
 all:
