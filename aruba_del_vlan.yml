@@ -1,3 +1,5 @@
+# Aruba AOSCX Playbook to delete a vlan on the switch.
+
 ---
 - hosts: aoscx_switch1
   collections:
