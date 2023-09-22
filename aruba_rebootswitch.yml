@@ -1,4 +1,4 @@
-## Reboot Switch
+# Aruba AOSCX Playbook to reboot a switch.
 ---
 - hosts: aoscx_switch1
   roles:
@@ -12,7 +12,7 @@
 #    ansible_python_interpreter: /usr/bin/python3
  
   tasks:
-    - name: reboot device
+    - name: Reboot Aruba Switch
       aoscx_command:
         commands:
           - command: 'boot system'
